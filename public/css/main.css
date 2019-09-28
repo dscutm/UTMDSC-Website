@@ -1,0 +1,66 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.box {
+    min-height: 50vh;
+    background-size: cover !important;
+}
+
+.content {
+    padding: 40px;
+
+    max-width: 1500px;
+
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.content p {
+    color: #828282;
+}
+
+.image-box {
+    width: 100%;
+}
+
+#\#cover {
+   min-height: 100vh;
+}
+
+.title-box {
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    text-align: center;
+}
+
+.cover-gradient {
+    height: 100vh;
+    width: 100%;
+
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+}
+
+.spacer {
+    height: 50vh;
+}
+
+.unspace {
+    transform: translateY(-50%);
+}
+
+#main-nav {
+    background: white;
+    border-bottom: #BDBDBD solid 1px !important;
+}
+
+footer {
+    background: #00204E;
+    min-height: 300px;
+    color: white;
+    padding: 40px;
+}
