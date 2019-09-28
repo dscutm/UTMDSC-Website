@@ -8,7 +8,7 @@ html {
 }
 
 .content {
-    padding: 40px;
+    padding: 60px;
 
     max-width: 1500px;
 
@@ -63,4 +63,76 @@ footer {
     min-height: 300px;
     color: white;
     padding: 40px;
+}
+
+.member {
+    width: 200px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.member-box {
+    display: inline-block;
+}
+
+.team-frame {
+
+    text-align: center;
+
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+
+@media screen and (min-width: 767px) {
+    #footer-section-1 {
+        text-align: left;
+    }
+
+    #footer-section-2 {
+        text-align: center;
+    }
+
+    #footer-section-3 {
+        text-align: right;
+    }
+
+    #map {
+        width: 300px;
+        height: 230px;
+    }
+}
+
+
+@media screen and (max-width:766px){
+    #footer-section-1 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #footer-section-2 {
+        text-align: center;
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #footer-section-3 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #map {
+        width: 75vw !important;
+        height: 230px;
+
+        left: 0;
+        right: 0;
+
+        margin: auto;
+    }
 }
