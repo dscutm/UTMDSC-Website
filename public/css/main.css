@@ -56,8 +56,19 @@ html {
 }
 
 #main-nav {
+    transition: 0.3s;
+}
+
+.nav-top {
+    background: none;
+    border-bottom: none solid 1px !important;
+
+}
+
+.nav-active {
     background: white;
-    border-bottom: #BDBDBD solid 1px !important;
+    /*border-bottom: #BDBDBD solid 1px !important;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 footer {
