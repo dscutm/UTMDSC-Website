@@ -170,7 +170,7 @@ $(document).ready(function () {
 
             var ampm = dateObj.getHours() >= 12 ? 'PM' : 'AM'
 
-            var date = months[dateObj.getMonth() + 1] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear() + ' @ ' + hours + ':' + minutes + ' ' + ampm
+            var date = months[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear() + ' @ ' + hours + ':' + minutes + ' ' + ampm
 
 
             buffer += generateEvent(event['logo']['original']['url'], date, event['name']['text'], '', event['summary'], event['url']);
