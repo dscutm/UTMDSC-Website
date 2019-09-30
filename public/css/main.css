@@ -137,6 +137,13 @@ footer {
     margin: auto;
 }
 
+#contact-info a {
+    color: white;
+}
+
+#contact-info i {
+    width: 20px;
+}
 
 @media screen and (min-width: 991px) {
     #footer-section-1 {
