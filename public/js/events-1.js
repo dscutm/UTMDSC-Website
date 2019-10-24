@@ -81,8 +81,7 @@ $(document).ready(function () {
 
             var date = months[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear() + ' @ ' + hours + ':' + minutes + ' ' + ampm
 
-
-            buffer += generateEvent(event['logo']['original']['url'], date, event['name']['text'], '', event['summary'], event['url']);
+            buffer += generateEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], '', event['summary'], event['url']);
 
         }
 
