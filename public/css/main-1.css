@@ -94,7 +94,7 @@ html {
 
 .event-object {
     border: 1px solid white;
-    min-height: 200px;
+    min-height: 60px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -139,6 +139,10 @@ footer {
     width: 25px;
 }
 
+.events-info {
+    height: 50px;
+}
+
 @media screen and (min-width: 991px) {
     #footer-section-1 {
         text-align: left;
@@ -172,6 +176,12 @@ footer {
 
 
 @media screen and (max-width: 991px){
+
+    .events-info {
+        height: 100px !important;
+    }
+
+
     #footer-section-1 {
         text-align: center;
         margin-top: 20px;

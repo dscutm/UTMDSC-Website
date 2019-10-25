@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    function generateEvent(image, date, title, location, description, url) {
+    function generateCurrentEvent(image, date, title, location, description, url) {
         return '<!-- Event object -->\n' +
             '<div class="event-object">\n' +
             '          <div class="row">\n' +
@@ -53,13 +53,46 @@ $(document).ready(function () {
 
     }
 
+    function generateArchivedEvent(image, date, title, location, description, url) {
+        return '<!-- Event object -->\n' +
+            '<div class="event-object">\n' +
+            '              <h5>\n' +
+
+            date +
+
+            '              </h5>\n' +
+            '\n' +
+            '              <h5>\n' +
+            '                <b>'+
+
+            title +
+
+            '</b>\n' +
+            '              </h5>\n' +
+            '\n' +
+            '              <h5>\n' +
+
+            location +
+
+            '              </h5>\n' +
+            '\n' +
+            '              <h6>\n' +
+
+            description +
+
+            '              </h6>\n' +
+            '        </div>'
+
+
+    }
+
 
     $.get('https://us-central1-utm-254105.cloudfunctions.net/events', function(data) {
 
-
         console.log(data);
 
-        var buffer = '';
+        var currentBuffer = '';
+        var archivedBuffer = '';
 
         var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
@@ -81,13 +114,29 @@ $(document).ready(function () {
 
             var date = months[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear() + ' @ ' + hours + ':' + minutes + ' ' + ampm
 
-            buffer += generateEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], '', event['summary'], event['url']);
+            if (dateObj >= new Date()) { // In the future
+                currentBuffer += generateCurrentEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], '', event['summary'], event['url']);
+            } else {
+                archivedBuffer += generateArchivedEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], '', event['summary'], event['url']);
 
+            }
         }
 
-        console.log(buffer)
+        console.log(currentBuffer)
 
-        $('#generate-events').html(buffer);
+        if (currentBuffer == '') {
+            currentBuffer = '       <div class="event-object" style="text-align: center">\n' +
+                '              <div class="events-info"></div>\n' +
+                '              <h1 style="transform: translateY(-50%) !important;">No upcoming events <i class="fas fa-sad-tear"></i></h1>\n' +
+                '          </div>\n'
+        }
+
+        if (archivedBuffer != '') {
+            $('#archived-events').css('display', 'block');
+        }
+
+        $('#generate-events').html(currentBuffer);
+        $('#generate-archived-events').html(archivedBuffer);
 
 
 
