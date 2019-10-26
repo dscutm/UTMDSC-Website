@@ -25,19 +25,15 @@ $(document).ready(function () {
             title +
 
             '</b>\n' +
-            '              </h5>\n' +
-            '\n' +
+
+            title +
+
+            '</b> ' + location +
             '              <h5>\n' +
-
-            location +
-
-            '              </h5>\n' +
-            '\n' +
-            '              <h6>\n' +
 
             description +
 
-            '              </h6>\n' +
+            '              </h5>\n' +
             '\n' +
             '              <br>\n' +
             '\n' +
@@ -67,12 +63,7 @@ $(document).ready(function () {
 
             title +
 
-            '</b>\n' +
-            '              </h5>\n' +
-            '\n' +
-            '              <h5>\n' +
-
-            location +
+            '</b> ' + location +
 
             '              </h5>\n' +
             '\n' +
@@ -115,9 +106,9 @@ $(document).ready(function () {
             var date = months[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear() + ' @ ' + hours + ':' + minutes + ' ' + ampm
 
             if (dateObj >= new Date()) { // In the future
-                currentBuffer += generateCurrentEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], '', event['summary'], event['url']);
+                currentBuffer += generateCurrentEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], event['venue'] == null ? '' : (' @ ' + event['venue']['address']['localized_multi_line_address_display'][0]), event['summary'], event['url']);
             } else {
-                archivedBuffer += generateArchivedEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], '', event['summary'], event['url']);
+                archivedBuffer += generateArchivedEvent(event['logo'] != null ? event['logo']['original']['url'] : 'images/defaultevent.png', date, event['name']['text'], event['venue'] == null ? '' : (' @ ' + event['venue']['address']['localized_multi_line_address_display'][0]), event['summary'], event['url']);
 
             }
         }

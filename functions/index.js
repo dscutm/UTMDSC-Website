@@ -13,7 +13,7 @@ exports.events = functions.https.onRequest((request, response) => {
 
     rq.get({
 
-        url: 'https://www.eventbriteapi.com/v3/users/me/events/',
+        url: 'https://www.eventbriteapi.com/v3/users/me/events/?expand=venue',
 
         headers: {
             'Authorization': 'Bearer ' + API_KEY
