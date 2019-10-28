@@ -24,11 +24,9 @@ $(document).ready(function () {
 
             title +
 
-            '</b>\n' +
+            '</b>\n'
 
-            title +
-
-            '</b> ' + location +
+            + location +
             '              <h5>\n' +
 
             description +
